@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">记事本</string>
+    <string name="search">搜索</string>
+    <string name="add">新建备忘录</string>
+    <string name="suo">缩略</string>
+    <string name="time">时间</string>
+    <string name="ok">保存</string>
+    <string name="bianji">在此处编辑文本内容</string>
+</resources>
