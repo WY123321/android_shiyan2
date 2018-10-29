@@ -74,6 +74,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         listview.setOnItemClickListener(this);
         //长按
         listview.setOnItemLongClickListener(this);
+
+
         addNote.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View arg0) {

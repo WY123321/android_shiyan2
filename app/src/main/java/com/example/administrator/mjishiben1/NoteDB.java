@@ -23,7 +23,11 @@ public class NoteDB {
                 "context text," +
                 "time varchar(20))");//建表
     }
-    public void update_db(String title,String text,String time,int item_ID){//更新
+    public Cursor query_db(int item_ID){
+        Cursor cursor = db.rawQuery("select * from notes where _id='"+item_ID+"';",null);
+        return cursor;//定义一个id方便后面查询删除
+    }
+    public void update_db(String title,String text,String time,int item_ID){//改
         if( text.isEmpty()){
             Toast.makeText(context, "各字段不能为空", Toast.LENGTH_LONG).show();
         }
@@ -38,10 +42,7 @@ public class NoteDB {
         Cursor cursor = db.rawQuery("select * from notes order by time desc",null);
         return cursor;
     }
-    public Cursor query_db(int item_ID){
-        Cursor cursor = db.rawQuery("select * from notes where _id='"+item_ID+"';",null);
-        return cursor;//定义一个id方便后面查询更新等操作
-    }
+
     public Cursor query_db(String SearchView){
         Cursor cursor = db.rawQuery("select * from notes where context like '%" + SearchView  + "%'", null);
         return cursor;
